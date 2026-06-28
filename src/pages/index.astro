@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, PROJECTS } from '../config.ts';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+};
+---
+
+<Base title={`${SITE.name} | Webサービス・ツールのポータル`} path="" jsonLd={jsonLd}>
+  <section class="hero">
+    <h1>iaxion</h1>
+    <p>個人開発で、日々の「ちょっと面倒」を解決する Web ツール・サービスを作って公開しています。下のプロジェクトから、いま使えるツールをどうぞ。</p>
+  </section>
+
+  <div class="grid">
+    {PROJECTS.map((p) => (
+      p.status === 'live' ? (
+        <a class="card" href={p.url}>
+          <span class="tag">公開中</span>
+          <h3>{p.name}</h3>
+          <p>{p.description}</p>
+          <p style="margin-top:10px;font-size:.8rem;color:var(--ink-soft);">{p.tags.join('・')}</p>
+        </a>
+      ) : (
+        <div class="card" style="opacity:.6;cursor:default;">
+          <span class="tag" style="background:#eef0f5;color:#6b7488;">準備中</span>
+          <h3>{p.name}</h3>
+          <p>{p.description}</p>
+        </div>
+      )
+    ))}
+    <div class="card" style="border-style:dashed;display:flex;flex-direction:column;justify-content:center;">
+      <h3 style="color:var(--ink-soft);">次のプロジェクト</h3>
+      <p>新しいツール・サービスを順次追加していきます。</p>
+    </div>
+  </div>
+
+  <section class="prose">
+    <h2>iaxion について</h2>
+    <p>
+      iaxion は、個人開発によるWebツール・サービスの運営者です。専門的な計算や手間のかかる作業を、
+      ブラウザだけで・無料で・すぐに使える形にして公開することを目指しています。
+      各ツールは会員登録不要で、できる限り入力情報を端末内で処理するなど、使いやすさとプライバシーに配慮して作っています。
+    </p>
+    <h2>公開中のプロジェクト</h2>
+    <ul>
+      {PROJECTS.filter((p) => p.status === 'live').map((p) => (
+        <li><a href={p.url}>{p.name}</a> — {p.description}</li>
+      ))}
+    </ul>
+    <p>
+      ご意見・ご要望は<a href="/contact/">お問い合わせ</a>からお気軽にどうぞ。運営者情報は<a href="/about/">こちら</a>。
+    </p>
+  </section>
+</Base>

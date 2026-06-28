@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config.ts';
+---
+
+<Base title="プライバシーポリシー" path="/privacy">
+  <section class="hero" style="padding-bottom:6px;">
+    <h1>プライバシーポリシー</h1>
+  </section>
+
+  <div class="prose">
+    <p>{SITE.name}（以下「当サイト」）における利用者情報の取り扱いについて、以下のとおり定めます。</p>
+
+    <h2>アクセス解析ツールについて</h2>
+    <p>
+      当サイトでは、サイトの利用状況を把握するためにアクセス解析ツール（Google アナリティクス等）を
+      利用する場合があります。これらは Cookie を使用してトラフィックデータを匿名で収集するもので、
+      個人を特定するものではありません。
+    </p>
+
+    <h2>広告配信について</h2>
+    <p>
+      当サイトおよび関連プロジェクトでは、第三者配信の広告サービス（Google AdSense 等）を利用する場合があります。
+      広告配信事業者は、利用者の興味に応じた広告を表示するために Cookie を使用することがあります。
+      利用者は
+      <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener">広告設定</a>
+      でパーソナライズ広告を無効にできます。また
+      <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">www.aboutads.info</a>
+      で第三者配信事業者の Cookie を無効にできます。
+    </p>
+
+    <h2>アフィリエイトプログラムについて</h2>
+    <p>
+      当サイトは、第三者が運営するアフィリエイトプログラムに参加し、商品・サービスを紹介する場合があります。
+    </p>
+
+    <h2>免責事項</h2>
+    <p>
+      当サイトの情報・計算結果は概算を含み、正確性・完全性を保証しません。詳しくは
+      <a href="/about/">運営者情報・免責事項</a>をご覧ください。
+    </p>
+
+    <h2>プライバシーポリシーの変更</h2>
+    <p>本ポリシーは、法令の変更等に応じて予告なく変更されることがあります。</p>
+  </div>
+</Base>
