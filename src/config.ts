@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'お金の計算ツール',
     description:
-      '給与の手取り・積立NISA・住宅ローン・ふるさと納税・退職金など、お金にまつわる計算を無料で。2025年税制対応。',
+      '給与の手取り・積立NISA・住宅ローン・ふるさと納税・退職金など、お金にまつわる計算を無料で。2026年税制対応。',
     url: 'https://money-tools.iaxion.dev/',
     status: 'live',
     tags: ['手取り計算', 'NISA', '住宅ローン', 'ふるさと納税'],
